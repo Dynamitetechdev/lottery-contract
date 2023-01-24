@@ -1,0 +1,485 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts/lottery.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> lottery.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/16</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/35</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+pragma solidity &gt;0.5.0 &lt;=0.9.0;
+&nbsp;
+// For requesting vrf
+import "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol";
+&nbsp;
+// for fulfiling
+import "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol";
+&nbsp;
+// AutomationCompatible.sol imports the functions from both ./AutomationBase.sol and
+// ./interfaces/AutomationCompatibleInterface.sol
+import "@chainlink/contracts/src/v0.8/AutomationCompatible.sol";
+&nbsp;
+error Lottery_notEnoughToken();
+error Lottery_NotOpen();
+error Lottery_upkeepNotNeeded(uint256 balance, uint256 state, uint256 players);
+error Lottery_transactionFailed();
+&nbsp;
+contract Lottery is VRFConsumerBaseV2, AutomationCompatibleInterface {
+    enum Lottery_State {
+        OPEN,
+        CALCULATING
+    }
+    uint256 public immutable i_entranceFee;
+    address payable[] private s_playerList;
+    Lottery_State private lotteryState;
+    VRFCoordinatorV2Interface private immutable i_vrfCoordinatorInterface;
+    uint256 private requestId;
+    uint256 private immutable i_interval;
+    uint256 private s_lastTimeStamp;
+    address private Lottery_winner;
+&nbsp;
+    //requestRandomVariables
+    bytes32 private immutable i_keyHash;
+    uint64 private immutable i_subId;
+    uint16 private constant REQUEST_CONFIRMATIONS = 3;
+    uint32 private immutable i_callbackGasLimit;
+    uint32 private immutable i_numWords = 1;
+    // events
+    event registeredPlayers(address indexed registeredPlayers);
+    event requestIdReceived(uint256 indexed requestId);
+    event lotteryWinner(address indexed lotteryWinnerAddress);
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        uint256 entranceFee,
+        address vrfCoodAddress,
+        bytes32 keyHash,
+        uint64 subId,
+        uint32 callBackGasLimit,
+        uint256 interval
+    ) VRFConsumerBaseV2(vrfCoodAddress) {
+        i_entranceFee = entranceFee;
+        lotteryState = Lottery_State.OPEN;
+        i_vrfCoordinatorInterface = VRFCoordinatorV2Interface(vrfCoodAddress);
+        i_keyHash = keyHash;
+        i_subId = subId;
+        i_callbackGasLimit = callBackGasLimit;
+        i_interval = interval;
+        s_lastTimeStamp = block.timestamp;
+    }
+&nbsp;
+    //have state to keep the lottery open or calculating
+    // pay with a specific amount
+    // keep player in a array
+    // should withdraw to a random winner in the array
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function pay() public payable {</span>
+<span class="cstat-no" title="statement not covered" >        if (lotteryState != Lottery_State.OPEN) {</span>
+            revert Lottery_NotOpen();
+        }
+<span class="cstat-no" title="statement not covered" >        if (msg.value &lt; i_entranceFee) {</span>
+            revert Lottery_notEnoughToken();
+        }
+<span class="cstat-no" title="statement not covered" >        s_playerList.push(payable(msg.sender))</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit registeredPlayers(msg.sender);</span>
+    }
+&nbsp;
+    // UPKEEPS TO MAKE OUR CONTRACT AUTOMATIC REQUEST RANDOM NUMBERS
+<span class="fstat-no" title="function not covered" >    function checkUpkeep(</span>
+        bytes memory /* checkData */
+    )
+        public
+        view
+        override
+        returns (bool upKeepNeeded, bytes memory /* perform Data */)
+    {
+<span class="cstat-no" title="statement not covered" >        bool hasBalance = address(this).balance &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >        bool hasPlayers = s_playerList.length &gt; 0;</span>
+<span class="cstat-no" title="statement not covered" >        bool isOpened = (lotteryState == Lottery_State.OPEN);</span>
+<span class="cstat-no" title="statement not covered" >        bool timeHasPassed = (block.timestamp - s_lastTimeStamp) &gt; i_interval;</span>
+&nbsp;
+        upKeepNeeded = hasBalance &amp;&amp; hasPlayers &amp;&amp; isOpened &amp;&amp; timeHasPassed;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function performUpkeep(bytes memory /* performData */) public {</span>
+<span class="cstat-no" title="statement not covered" >        (bool upKeepNeeded, ) = checkUpkeep("0x");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!upKeepNeeded) {</span>
+            revert Lottery_upkeepNotNeeded(
+                address(this).balance,
+                uint256(lotteryState),
+                s_playerList.length
+            );
+        }
+&nbsp;
+        requestId = i_vrfCoordinatorInterface.requestRandomWords(
+            i_keyHash,
+            i_subId,
+            REQUEST_CONFIRMATIONS,
+            i_callbackGasLimit,
+            i_numWords
+        );
+        lotteryState = Lottery_State.CALCULATING;
+<span class="cstat-no" title="statement not covered" >        emit requestIdReceived(requestId);</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function fulfillRandomWords(</span>
+        uint256 /* requestId */,
+        uint256[] memory randomWords
+    ) internal override {
+<span class="cstat-no" title="statement not covered" >        uint256 indexOfWinner = randomWords[0] % s_playerList.length;</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        address payable winner = s_playerList[indexOfWinner];</span>
+&nbsp;
+        Lottery_winner = winner;
+<span class="cstat-no" title="statement not covered" >        (bool success, ) = winner.call{value: address(this).balance}("");</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        if (!success) {</span>
+            revert Lottery_transactionFailed();
+        }
+        s_playerList = new address payable[](0);
+&nbsp;
+        s_lastTimeStamp = block.timestamp;
+&nbsp;
+        lotteryState = Lottery_State.OPEN;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit lotteryWinner(winner);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jan 24 2023 20:53:18 GMT+0100 (West Africa Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
