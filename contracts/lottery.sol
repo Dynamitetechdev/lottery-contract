@@ -161,4 +161,8 @@ contract Lottery is VRFConsumerBaseV2, AutomationCompatibleInterface {
     function getInterval() public view returns (uint256) {
         return i_interval;
     }
+
+    function getEntranceFee() public view returns (uint256) {
+        return i_entranceFee;
+    }
 }
